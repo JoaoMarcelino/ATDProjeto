@@ -1,0 +1,8 @@
+function [outputArg1] = plotAllActivities(dados,fs)
+    
+    for i=1:12
+        subplpot(12,3,i*3-2);
+        [frequencias,amplitude]=transFourierDiscreta(organizadoPorAtividade{1}{1}{1},5);
+    end
+end
+
