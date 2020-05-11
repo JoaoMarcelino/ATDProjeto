@@ -14,6 +14,9 @@ labels = load("./PL5/labels.txt");
 organizadoPorAtividade=organizar(["acc_exp41_user20","acc_exp42_user21","acc_exp43_user21","acc_exp44_user22","acc_exp45_user22","acc_exp46_user23","acc_exp47_user23","acc_exp48_user24","acc_exp49_user24","acc_exp50_user25"],"labels");
 [row, collumn] = find(labels(:,1)==41);
 %disp(row);
+[frequencias,amplitude]=transFourierDiscreta(organizadoPorAtividade{1}{1}{1},5);
+figure(10);
+plot(frequencias,amplitude);
 
 tempos = labels(row,3:5);
 figure(2);
