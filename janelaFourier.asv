@@ -1,7 +1,0 @@
-function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tempoSobreposicao,modo)
-    Tframe = tempoJanela; % largura da janela de análise em s
-    Toverlap = tempoSobreposicao; % sobreposiçao das janelas em s
-    Nframe = round(Tframe*fs); % número de amostras na janela
-    Noverlap = round(Toverlap*fs); % número de amostras sobrepostas na janela
-end
-
