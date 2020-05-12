@@ -31,7 +31,7 @@ plot(freq,amp);
 
 tempos = labels(row,3:5);
 figure(2);
-plot(acc_exp42_user21);
+plot(acc_exp41_user21);
 
 
 %{
