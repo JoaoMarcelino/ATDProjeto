@@ -12,7 +12,7 @@ function [f,amplitude] = transFourierDiscreta(sinal,fs)
     end
     
     amplitude=abs(X);
-    plot(f,amplitude);
+    
     
 end
 
