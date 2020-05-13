@@ -14,14 +14,10 @@ acc_exp50_user25 = load("./PL5/acc_exp50_user25.txt");
 
 organizadoPorAtividade=organizar(["acc_exp41_user20","acc_exp42_user21","acc_exp43_user21","acc_exp44_user22","acc_exp45_user22","acc_exp46_user23","acc_exp47_user23","acc_exp48_user24","acc_exp49_user24","acc_exp50_user25"],"labels");
 
-%{
-x=organizadoPorAtividade{1}{1}{1};
-numel(x)
-[freq,amp]=transFourierDiscreta(x,5);
-numel(amp)
-%}
 
-calcularFrequenciaAndar(organizadoPorAtividade,5);
+calcularFrequenciaAndar(organizadoPorAtividade,5,2);
+
+
 
 
 
