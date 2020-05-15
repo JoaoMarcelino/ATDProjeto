@@ -8,6 +8,7 @@ function [binsFrequencias] = mediaFrequenciasAtividade(dados,fs,atividade,eixo,b
     binsFrequencias=[-fs/2:binWidth:fs/2-binWidth,1]; %baldes e frequencias
     binsFrequencias=binsFrequencias';   
     binsFrequencias(1:end,2)=0;
+    binsFrequencias(1:end,3)=0;
     for i=1:length(dados{eixo}{atividade})            
         segmento=dados{eixo}{atividade}{i};
         segmento=detrend(segmento);
@@ -21,7 +22,9 @@ function [binsFrequencias] = mediaFrequenciasAtividade(dados,fs,atividade,eixo,b
                 if(frequencia>=binsFrequencias(k) && frequencia<binsFrequencias(k+1))
                     binFreq=binsFrequencias(k,1);
                     valor=binsFrequencias(k,2);
-                    binsFrequencias(k,2)=valor+amplitude;
+                    count=binsFrequencias(k,3);
+                    binsFrequencias(k,3)=count+1;
+                    binsFrequencias(k,2)=(valor+amplitude)/binsFrequencias(k,3);
                     break;
                 end
             end
