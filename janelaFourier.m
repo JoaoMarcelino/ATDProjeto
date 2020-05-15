@@ -1,6 +1,7 @@
 function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tempoSobreposicao,modo)
-    Tframe = tempoJanela; % largura da janela de análise em s
-    Toverlap = tempoSobreposicao; % sobreposiçao das janelas em s
+    Ts=1/fs;
+    Tframe = 0.005*numel(atividade)*Ts; % largura da janela de análise em s
+    Toverlap = Tframe/2; % sobreposiçao das janelas em s
     Nframe = round(Tframe*fs); % número de amostras na janela
     Noverlap = round(Toverlap*fs); % número de amostras sobrepostas na janela
     N = numel(atividade);
@@ -25,11 +26,12 @@ function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tem
         
         % obter a magnitude da fft do sinal
         m_X_frame = abs(fftshift(fft(x_frame)));
-
-
+            
+        m_X_frame=m_X_frame(round(end/2):end);
+        
         nframes = nframes+1;
-
-        frames=[frames, m_X_frame];
+        
+        frames=[frames;m_X_frame'];
     end
     
     frequencias=f_frame;

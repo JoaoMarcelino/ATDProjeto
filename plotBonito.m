@@ -8,7 +8,7 @@ function [] = plotBonito(ficheiro,labels,nFigura,fs,eixo)
     dados1=dados(1:end,eixo);
     Ts=1/fs;
     x=0:Ts:numel(dados1)*Ts-Ts;
-    plot(x,dados1');
+    plot(x,dados1',"black");
     
     
     nome=char(ficheiro);
