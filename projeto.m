@@ -21,12 +21,12 @@ dados=organizadoPorAtividade{2}{5}{1};
 dados=detrend(dados);
 
 
-variasJanelas(organizadoPorAtividade{2}{5}{2}, 50 ,1, 1);
+variasJanelas(organizadoPorAtividade{2}{7}{2}, 50, 2, 1);
 
 
-%a=stft(dados);
-%figure(2);
-%waterfall(abs(a));
+a=stft(dados);
+figure(2);
+waterfall(abs(a));
 
 %{
 dados=load("./PL5/acc_exp31_user15.txt");
