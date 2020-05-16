@@ -4,9 +4,17 @@ function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tem
     Nframe = round(Tframe*fs); % número de amostras na janela
     Noverlap = round(Toverlap*fs); % número de amostras sobrepostas na janela
     N = numel(atividade);
+    
     if(modo==1)
         h = hamming(Nframe); % janela de hamming
     end
+    if (modo == 2)
+        h = hann(Nframe); % janela de hann
+    end
+    if (modo == 3)
+        h = blackman(Nframe); % janela de blackman
+    end
+    
     
     if mod(Nframe, 2)==0
         f_frame = -fs/2:fs/Nframe:fs/2-fs/Nframe;
@@ -19,7 +27,7 @@ function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tem
     
     for ii = 1:Nframe - Noverlap:N - Nframe
         % aplicar a janela ao sinal do tempo
-        if(modo==1)
+        if(modo> 0 && modo < 4)
             x_frame = atividade(ii:ii+Nframe-1).*h;
         end
         

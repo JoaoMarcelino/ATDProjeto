@@ -22,6 +22,7 @@ organizadoPorAtividade=organizar(["acc_exp41_user20","acc_exp42_user21","acc_exp
 [binsFrequencias] = mediaFrequenciasAtividade(organizadoPorAtividade,50,12,2,0.05);
 plot(binsFrequencias(1:end,1),binsFrequencias(1:end,2));
 
+variasJanelas(organizadoPorAtividade{1}{1}{1}, 50, 8, 3);
 
 %{
 [row, collumn] = find(labels(:,1)==41);
