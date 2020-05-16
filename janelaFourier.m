@@ -31,7 +31,10 @@ function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tem
         if(modo> 0 && modo < 4)
             x_frame = atividade(ii:ii+Nframe-1).*h;
         end
-        
+        if (modo == 0)
+            x_frame = atividade(ii:ii+Nframe-1);
+        end
+    
         % obter a magnitude da fft do sinal
         m_X_frame = abs(fftshift(fft(x_frame)));
             

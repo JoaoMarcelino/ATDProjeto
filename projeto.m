@@ -20,7 +20,8 @@ plotBonito("./PL5/acc_exp41_user20.txt","./PL5/labels.txt",1,50,1);
 dados=organizadoPorAtividade{2}{5}{1};
 dados=detrend(dados);
 
-variasJanelas(organizadoPorAtividade{1}{1}{1}, 50, 8, 3);
+
+variasJanelas(organizadoPorAtividade{2}{5}{2}, 50 ,1, 1);
 
 
 %a=stft(dados);
