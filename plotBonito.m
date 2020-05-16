@@ -24,16 +24,28 @@ function [] = plotBonito(ficheiro,labels,nFigura,fs,eixo)
             atividade=entradas(z(i),3);
             comeco=entradas(z(i),4);
             fim=entradas(z(i),5);
-            abcissa=comeco*Ts:Ts:fim*Ts;
+            abcissa=comeco*Ts-Ts:Ts:fim*Ts-Ts;
             seg=dados(comeco:fim,eixo)';
             plot(abcissa,seg);
             string=switchAtividade(atividade);
             meiox=round(length(abcissa)/2);
             meioy=round(length(seg)/2);
-            text(abcissa(meiox),seg(meioy)*1.2,string,'HorizontalAlignment','center');
+            text(abcissa(meiox),max(seg)*1.1,string,'HorizontalAlignment','center');
+           
      end
     hold off;
-    
+    xlabel("Tempo(seg)");
+        switch eixo
+            case 1
+                ylabel("Eixo X");
+
+            case 2
+                ylabel("Eixo Y");
+
+            case 3
+                ylabel("Eixo Z");
+
+        end
     
 end
 
