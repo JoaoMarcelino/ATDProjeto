@@ -34,11 +34,12 @@ plotBonito("./PL5/acc_exp41_user20.txt","./PL5/labels.txt",1,50,3);
 %}
 
 %variasJanelas(organizadoPorAtividade{2}{5}{2}, 50 ,1, 1);
+%variasJanelas(organizadoPorAtividade{2}{7}{2}, 50, 2, 1);
 
 
-%a=stft(dados);
-%figure(2);
-%waterfall(abs(a));
+a=stft(dados);
+figure(2);
+waterfall(abs(a));
 
 
 
