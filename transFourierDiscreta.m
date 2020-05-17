@@ -1,5 +1,8 @@
-function [f,amplitude] = transFourierDiscreta(sinal,fs)
-    sinal=detrend(sinal);
+function [f,amplitude] = transFourierDiscreta(sinal,fs,modo)
+    if(modo)
+        sinal=detrend(sinal);
+    end
+    
     N=numel(sinal);
     Ts=1/fs;
     X=fftshift(fft(sinal));

@@ -15,10 +15,6 @@ function spm=melhorPixa(freq,amp)
     
     spm=frequencia*60;
     
-    
-    
-    
-    
-    
+  
 end
 
