@@ -41,11 +41,11 @@ function [frequencias,arrayJanelas] = janelaFourier(atividade,fs,tempoJanela,tem
        
         m_X_frame = abs(fftshift(fft(x_frame)));
             
-        m_X_frame=m_X_frame(round(end/2)+1:end);
+        m_X_frame = m_X_frame(round(end/2)+1:end);
         
         nframes = nframes+1;
         
-        frames=[frames,m_X_frame];
+        frames = [frames,m_X_frame];
     end
     
     frequencias=f_frame(round(end/2)+1:end);

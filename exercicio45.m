@@ -45,11 +45,11 @@ function exercicio45()
             
     end
     
-    figure();
+    figure(5);
     scatter3(maxi(1:3:end,1), maxi(1:3:end,2), maxi(1:3:end,3), 'MarkerEdgeColor', [1,0,0]);
     hold on;
     scatter3(maxi(2:3:end,1), maxi(2:3:end,2), maxi(2:3:end,3), 'MarkerEdgeColor', [0,1,0]);
     scatter3(maxi(3:3:end,1), maxi(3:3:end,2), maxi(3:3:end,3), 'MarkerEdgeColor', [0,0,1]);
     hold off;
-    disp(certas);
+%     disp(certas);
 end

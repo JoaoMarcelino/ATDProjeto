@@ -20,10 +20,11 @@ function exercicio44(files,labels,fs)
             if atividade > 3
                 comeco = entradas(z(j),4);
                 fim = entradas(z(j),5);
-                segmentoX = fich(comeco:fim,1);
+                segmentoX = fich(comeco:fim,2);
 
                 [freq,amp] = transFourierDiscreta(segmentoX,fs,1);
-                hold on
+                figure(4);
+                hold on;
                 subplot(4, 3, counter);
                 plot(freq, amp);
                 counter = counter + 1;

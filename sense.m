@@ -31,7 +31,7 @@ function [especificidade,sensibilidade] = sense(files,labels,fs,min,max,figura)
             
             
             
-            passos=melhorPixa(freq,amp);
+            passos = steps(freq,amp);
             if(length(passos)~=1)
                 passos=abs(passos(1));
             end
@@ -61,7 +61,9 @@ function [especificidade,sensibilidade] = sense(files,labels,fs,min,max,figura)
         sensibilidade=pv/(pv+ff);
         especificidade=fv/(fv+pf);
         
+        figure(3);
         hold on;
+        
         for i=2:length(array)
             scatter(double(array(i,1)),double(array(i,2)),'markeredgecolor',array(i,3:5)./255);
             
