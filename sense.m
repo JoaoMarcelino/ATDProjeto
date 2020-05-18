@@ -28,6 +28,9 @@ function [especificidade,sensibilidade] = sense(files,labels,fs,min,max,figura)
             segmentoX=fich(comeco:fim,1);
             
             [freq,amp]=transFourierDiscreta(segmentoX,fs,1);
+            
+            
+            
             passos=melhorPixa(freq,amp);
             if(length(passos)~=1)
                 passos=abs(passos(1));
