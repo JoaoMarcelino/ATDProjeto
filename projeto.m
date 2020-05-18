@@ -44,17 +44,27 @@ plot(freq,amp);
 title("Andar Down");
 %}
 
-%[andar,up,down]=sense2(["acc_exp41_user20","acc_exp42_user21","acc_exp43_user21","acc_exp44_user22","acc_exp45_user22","acc_exp46_user23","acc_exp47_user23","acc_exp48_user24","acc_exp49_user24","acc_exp50_user25"],"labels",50)
 
 
 %{
 dados=load("./PL5/acc_exp41_user20.txt");
 dados=detrend(dados(1:end,3));
-[freq,a] = janelaFourier(dados,50,2,1,1);
-figure(10);
-imagesc(20*log10(a)');
-%}
+[freq,a] = janelaFourier(dados,50,4,2,1);
+f=figure(10);
 
+imagesc(length(a(1,1:end)),freq,a);
+
+ylabel("Frequência(Hz)");
+xlabel("Janela STFT");
+barra=colorbar;
+
+ylabel(barra, 'Magnitude');
+
+f=figure(11);
+waterfall(a');
+
+
+%}
 
 
 

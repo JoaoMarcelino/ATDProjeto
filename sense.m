@@ -63,6 +63,10 @@ function [especificidade,sensibilidade] = sense(files,labels,fs,min,max,figura)
             scatter(double(array(i,1)),double(array(i,2)),'markeredgecolor',array(i,3:5)./255);
             
         end
+         min1=zeros(counter-1)+min;
+         max1=zeros(counter-1)+max;
+         plot(min1,"-r");
+         plot(max1,"-r");
         hold off;
         xlabel("Nº segmento");
         ylabel("Passos por minuto");
